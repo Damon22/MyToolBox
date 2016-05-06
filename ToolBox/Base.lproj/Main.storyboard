@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3JR-te-zqb">
+                                <rect key="frame" x="-20" y="0.0" width="980" height="510"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-js-OkF">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="510"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-0i-NOa">
+                                        <rect key="frame" x="430" y="0.0" width="550" height="510"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK4-hE-hf9">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="510"/>
+                                                <state key="normal" title="开始扫描"/>
+                                                <connections>
+                                                    <action selector="startScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8D-gk-XZ3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGy-iZ-7tt">
+                                                <rect key="frame" x="70" y="0.0" width="40" height="510"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="MOd-7d-BIG"/>
+                                                    <constraint firstAttribute="height" constant="40" id="WQN-Th-5zX"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Icon-40"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="MOd-7d-BIG"/>
+                                                        <exclude reference="WQN-Th-5zX"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="MOd-7d-BIG"/>
+                                                        <include reference="WQN-Th-5zX"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nVD-8w-5hI">
+                                                <rect key="frame" x="120" y="0.0" width="360" height="510"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="132" id="x2U-g2-Z9C">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="x2U-g2-Z9C"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="x2U-g2-Z9C"/>
+                                                    </mask>
+                                                </variation>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-KU-Y5Z">
+                                                <rect key="frame" x="490" y="0.0" width="60" height="510"/>
+                                                <state key="normal" title="前往链接"/>
+                                                <connections>
+                                                    <action selector="goLink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JR6-b3-zuX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nVD-8w-5hI" firstAttribute="leading" secondItem="eJs-0i-NOa" secondAttribute="leading" id="Sfg-k8-ZTi"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Sfg-k8-ZTi"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical">
+                                            <mask key="constraints">
+                                                <include reference="Sfg-k8-ZTi"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VEz-js-OkF" firstAttribute="leading" secondItem="3JR-te-zqb" secondAttribute="leading" id="1u8-7X-0Ng"/>
+                                    <constraint firstItem="eJs-0i-NOa" firstAttribute="leading" secondItem="3JR-te-zqb" secondAttribute="leading" constant="20" symbolic="YES" id="KyD-16-0Gz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1u8-7X-0Ng"/>
+                                        <exclude reference="KyD-16-0Gz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical">
+                                    <mask key="constraints">
+                                        <include reference="1u8-7X-0Ng"/>
+                                        <include reference="KyD-16-0Gz"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3JR-te-zqb" secondAttribute="bottom" constant="30" id="3Wd-FQ-T3g"/>
+                            <constraint firstAttribute="trailing" secondItem="3JR-te-zqb" secondAttribute="trailing" id="XJy-jN-1Jq"/>
+                            <constraint firstItem="3JR-te-zqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fKZ-qg-vbV"/>
+                            <constraint firstItem="VEz-js-OkF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h9E-Gj-7CL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XJy-jN-1Jq"/>
+                                <exclude reference="fKZ-qg-vbV"/>
+                                <exclude reference="h9E-Gj-7CL"/>
+                                <exclude reference="3Wd-FQ-T3g"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="XJy-jN-1Jq"/>
+                                <include reference="fKZ-qg-vbV"/>
+                                <include reference="h9E-Gj-7CL"/>
+                                <include reference="3Wd-FQ-T3g"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="lightningBtn" destination="rGy-iZ-7tt" id="XXk-An-xvV"/>
+                        <outlet property="scanView" destination="VEz-js-OkF" id="olu-TO-Rw6"/>
+                        <outlet property="showURLTV" destination="nVD-8w-5hI" id="Yca-cs-YCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="315"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-40" width="40" height="40"/>
+    </resources>
+</document>
