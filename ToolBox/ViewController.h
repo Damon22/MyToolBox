@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *lightningBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *beginBtn;
+
 - (IBAction)startScan:(id)sender;
 
 - (IBAction)goLink:(id)sender;

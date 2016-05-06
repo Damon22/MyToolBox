@@ -141,6 +141,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="beginBtn" destination="QK4-hE-hf9" id="syz-um-V4A"/>
                         <outlet property="lightningBtn" destination="rGy-iZ-7tt" id="XXk-An-xvV"/>
                         <outlet property="scanView" destination="VEz-js-OkF" id="olu-TO-Rw6"/>
                         <outlet property="showURLTV" destination="nVD-8w-5hI" id="Yca-cs-YCf"/>

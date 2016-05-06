@@ -42,9 +42,9 @@
         NSString* action = [[url absoluteString] substringFromIndex:prefix.length];
         if ([action isEqualToString:@"beginScan"]) {
             ViewController *scanVc = (ViewController*)self.window.rootViewController;
-            UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            [titleBtn setTitle:@"停止扫描" forState:UIControlStateNormal];
-            [scanVc startScan:titleBtn];
+            
+            [scanVc.beginBtn setTitle:@"开始扫描" forState:UIControlStateNormal];
+            [scanVc startScan:scanVc.beginBtn];
         }
     }
     
