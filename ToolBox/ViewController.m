@@ -84,11 +84,40 @@ static const char *kScanQRCodeQueueName = "ScanQRCodeQueue";
     // 获取AVCaptureDevice 实例
     NSError *error;
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    if ([captureDevice lockForConfiguration:nil]) {
+        // 对焦模式，自动对焦
+        if (captureDevice && [captureDevice isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
+            [captureDevice setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
+        } else if (captureDevice && [captureDevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            [captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        
+        // 自动白平衡
+        if (captureDevice && [captureDevice isWhiteBalanceModeSupported:AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance]) {
+            captureDevice.whiteBalanceMode = AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance;
+        }
+        else if (captureDevice && [captureDevice isWhiteBalanceModeSupported:AVCaptureWhiteBalanceModeAutoWhiteBalance]) {
+            captureDevice.whiteBalanceMode = AVCaptureWhiteBalanceModeAutoWhiteBalance;
+        }
+        
+        // 自动曝光
+        if (captureDevice && [captureDevice isExposureModeSupported:AVCaptureExposureModeContinuousAutoExposure]) {
+            captureDevice.exposureMode = AVCaptureExposureModeContinuousAutoExposure;
+        }
+        else if (captureDevice && [captureDevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
+            captureDevice.exposureMode = AVCaptureExposureModeAutoExpose;
+        }
+        
+        [captureDevice unlockForConfiguration];
+    }
+    
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     if (!input) {
         NSLog(@"%@", [error localizedDescription]);
         return NO;
     }
+    
     // 创建会话
     _captureSession = [[AVCaptureSession alloc] init];
     // 加入输入流
@@ -119,6 +148,9 @@ static const char *kScanQRCodeQueueName = "ScanQRCodeQueue";
 - (void)endReading {
     [_captureSession stopRunning];
     _captureSession = nil;
+    
+    [_videoPreviewLayer removeFromSuperlayer];
+    _videoPreviewLayer = nil;
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
